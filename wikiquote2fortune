@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# MIT Licensed
+# regis@regismesquita.com.br
+# Converts a wikiquote article to a fortune file
+# use: ./wikiquote2fortune "http://en.wikiquote.org/wiki/Battlestar_Galactica_%282003%29"
+# output: generated_fortune and generated_fortune.dat
+# Attention: will overwrite any file named /tmp/foo , /tmp/foo.html
+if [ $# -l 2 ]; then
+  echo 'Use: $0 [wiki_url] [fortune_name]'
+  exit
+fi
+
+ wget "$1" -O /tmp/foo 
+ sed -i 's/<hr.*/<dd>%<\/dd>/' /tmp/foo 
+ cat /tmp/foo | grep '<dd>' > /tmp/foo.html  
+ links -dump /tmp/foo.html -width 150 > "$2"
+ strfile "$2"
+
