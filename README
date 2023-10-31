@@ -2,10 +2,15 @@ Straight to the point:
 
 1. Find a page you like in wikiquote, in my case BSG page : http://en.wikiquote.org/wiki/Battlestar_Galactica_%282003%29
 2. Choose a name for you fortune file , in my case: bsg_fortune
-3. Run the program: ./wikiquote2fortune  http://en.wikiquote.org/wiki/Battlestar_Galactica_%282003%29 bsg_fortune
+3. Run the program: ./wikiquote2fortune  http://en.wikiquote.org/wiki/Battlestar_Galactica_%282003%29 > bsg_fortune
+4. strfile bsg_fortune
+5. fortune bsg_fortune
 4. All ready just run fortune bsg_fortune , and everything should be ok.
+
+The step 4 (strfile) will create a file called bsg_fortune.dat, those two files need to be on the same folder for the fortune command to work.
 
 Note: I developed this code while some tests for my app were running, so there might be bugs...
 Note 2: I don't work with shellscript daily so probably there's a better way of doing that, contribute if you know how...
+Note 3: I quickly redid it go as the previous one was not working as expected...
 
-Enjoy, MIT licensed (c'mon it's just a handful of lines...)
+Enjoy, MIT licensed (c'mon it's just a handful of lines...) [After so many years it still is]
